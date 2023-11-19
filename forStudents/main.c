@@ -1,3 +1,5 @@
+// test program to try out libcs4050
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,11 +55,13 @@ int main(void)
         countVertices-1,  // end - we assume t is the last vertex
         d,successor);
 
+    
     // 2) Print the distance from each v to each s
     printf("\n\n");
     for (int i=0;i<countVertices;i++)
     {
-        printf("successor (%s)=%s", VertName(vertices,i), VertName(vertices,successor[i]));
+        printf("successor (%s)=", VertName(vertices,i));
+        printf("=%s, ", VertName(vertices,successor[i]));
         if (FLT_MAX==d[i])
         {
             printf(" distance to t=INFINITY\n");
@@ -67,4 +71,6 @@ int main(void)
             printf(" distance to t=%5.2f\n",d[i]);
         }
     }
+    
+    
 }
